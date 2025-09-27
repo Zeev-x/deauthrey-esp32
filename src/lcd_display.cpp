@@ -3,7 +3,6 @@
 #include <Adafruit_SSD1306.h>
 #include "lcd_display.h"
 #include "definitions.h"
-#include "main.h"
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 32
@@ -93,4 +92,5 @@ void lcd_show_status(const char* message) {
     }
     display.display();
 }
+
 
