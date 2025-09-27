@@ -6,6 +6,7 @@
 #include "main.h"
 
 #define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
 #define OLED_RESET    -1  // Tidak digunakan di I2C
 
 // Gunakan alamat I2C OLED Anda (biasanya 0x3C)
@@ -92,3 +93,4 @@ void lcd_show_status(const char* message) {
     }
     display.display();
 }
+
