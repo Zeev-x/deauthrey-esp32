@@ -1,0 +1,28 @@
+{
+  "name": "deauthrey",
+  "version": "1.0.0",
+  "description": "Library ESP32 untuk utilitas deauth & LCD (struktur proyek dan API).",
+  "keywords": ["esp32", "wifi", "lcd", "deauth", "utilities"],
+  "authors": [
+    {
+      "name": "Reyette",
+      "email": "your-email@example.com",
+      "url": "https://github.com/Zeev-x"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Zeev-x/deauthrey-esp32",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zeev-x/deauthrey-esp32.git"
+  },
+  "frameworks": ["arduino", "espidf"],
+  "platforms": ["espressif32"],
+  "dependencies": {
+    "bblanchon/ArduinoJson@^6.19.4": "^6.19.4"
+  },
+  "build": {
+    "include": ["src"],
+    "flags": ["-DDEAUTHREY_LIBRARY"]
+  }
+}
