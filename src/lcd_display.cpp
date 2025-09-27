@@ -81,16 +81,17 @@ void lcd_show_status(const char* message) {
     display.clearDisplay();
     display.fillRect(0, 16, SCREEN_WIDTH, 16, SSD1306_BLACK); // Bersihkan area status
     display.setCursor(0, 16);
-    ifdisplay.height() == 32) {
+    if(display.height() == 32) {
       centeredText("Deauth mode:", 0, 1);
       centeredText(message, 16, 2);
-    } else ifdisplay.height() == 64) {
+    } else if(display.height() == 64) {
       centeredText("Deauth mode:", 5, 1);
       centeredText(message, 25, 2);
       centeredText("Reyette Projects", 50, 1);
     }
     display.display();
 }
+
 
 
 
