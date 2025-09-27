@@ -5,10 +5,13 @@
 #include "definitions.h"
 
 #define SCREEN_WIDTH 128
+#ifndef SCREEN_HEIGHT
+#define SCREEN_HEIGHT 32
+#endif
 #define OLED_RESET    -1  // Tidak digunakan di I2C
 
 // Gunakan alamat I2C OLED Anda (biasanya 0x3C)
-Adafruit_SSD1306 display(SCREEN_WIDTH, display.height(), &Wire, OLED_RESET);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 void centeredText(const String& text, int y, uint8_t textSize = 1) {
   display.setTextColor(SSD1306_WHITE);
@@ -70,9 +73,9 @@ void lcd_init_128x64() {
 }
 
 void lcd_init() {
-  if(display.height() == 32) {
+  if(SCREEN_HEIGHT == 32) {
     lcd_init_128x32();
-  } else if(display.height() == 64) {
+  } else if(SCREEN_HEIGHT == 64) {
     lcd_init_128x64();
   }
 }
@@ -81,16 +84,17 @@ void lcd_show_status(const char* message) {
     display.clearDisplay();
     display.fillRect(0, 16, SCREEN_WIDTH, 16, SSD1306_BLACK); // Bersihkan area status
     display.setCursor(0, 16);
-    if(display.height() == 32) {
+    if(SCREEN_HEIGHT == 32) {
       centeredText("Deauth mode:", 0, 1);
       centeredText(message, 16, 2);
-    } else if(display.height() == 64) {
+    } else if(SCREEN_HEIGHT == 64) {
       centeredText("Deauth mode:", 5, 1);
       centeredText(message, 25, 2);
       centeredText("Reyette Projects", 50, 1);
     }
     display.display();
 }
+
 
 
 
