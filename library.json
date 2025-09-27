@@ -24,8 +24,12 @@
   },
   "build": {
     "include": ["src"],
-    "flags": ["-DDEAUTHREY_LIBRARY"]
+    "flags": [
+      "-Wl,-z,muldefs",
+      "-DDEAUTHREY_LIBRARY"
+    ]
   }
 }
+
 
 
