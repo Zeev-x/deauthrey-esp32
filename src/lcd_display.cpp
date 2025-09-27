@@ -8,7 +8,7 @@
 #define OLED_RESET    -1  // Tidak digunakan di I2C
 
 // Gunakan alamat I2C OLED Anda (biasanya 0x3C)
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+Adafruit_SSD1306 display(SCREEN_WIDTH, display.height(), &Wire, OLED_RESET);
 
 void centeredText(const String& text, int y, uint8_t textSize = 1) {
   display.setTextColor(SSD1306_WHITE);
@@ -91,6 +91,7 @@ void lcd_show_status(const char* message) {
     }
     display.display();
 }
+
 
 
 
